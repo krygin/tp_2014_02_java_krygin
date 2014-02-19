@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Авторизация</title>
+</head>
+<body>
+<form action = "authorize" method = "post">
+    Логин:  <input type="text" name="username" />
+    <br />
+    Пароль: <input type="text" name="password" />
+    <br />
+    <input type="submit" value="Войти"/>
+</form>
+<a href="/">Назад</a>
+<p>${error}</p>
+</body>
+</html>
