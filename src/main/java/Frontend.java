@@ -1,7 +1,3 @@
-
-/**
- * Created by Ivan on 16.02.14.
- */
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,18 +12,15 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Frontend extends HttpServlet {
-    private String login = "";
-    private String password="";
+
     private  AtomicLong userIdGenerator = new AtomicLong();
     private Map<String, User> database = new HashMap<>();
 
     public static String getTime() {
         Date date = new Date();
-        date.getTime();
         DateFormat formatter = new SimpleDateFormat("HH.mm.ss");
         return formatter.format(date);
     }
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -58,7 +51,7 @@ public class Frontend extends HttpServlet {
             pageVariables.put("serverTime", getTime());
             pageVariables.put("userId", userId);
             resp.getWriter().println(PageGenerator.getPage("user.tml", pageVariables));
-            return;
+
         }
     }
 
@@ -112,14 +105,14 @@ public class Frontend extends HttpServlet {
                 resp.getWriter().println(PageGenerator.getPage("authform.tml", pageVariables));
                 return;
             }
-            if (database.containsKey(username) & database.get(username).password.equals(password)) {
+            if (database.containsKey(username) && database.get(username).password.equals(password)) {
                 resp.sendRedirect("/user");
                 return;
             }
 
             pageVariables.put("error", "Не существует пользователя с таким паролем");
             resp.getWriter().println(PageGenerator.getPage("authform.tml", pageVariables));
-            return;
+
         }
     }
 }
