@@ -21,7 +21,7 @@ public class Main
         servletContextHandler.addServlet(new ServletHolder(frontend), "/*");
 
         ResourceHandler resourceHandler = new ResourceHandler();
-        resourceHandler.setDirectoriesListed(true);
+        resourceHandler.setDirectoriesListed(false);
         resourceHandler.setResourceBase("static");
 
         HandlerList handlers = new HandlerList();
