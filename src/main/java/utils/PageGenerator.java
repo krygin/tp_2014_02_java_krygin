@@ -1,6 +1,7 @@
-/**
+package utils; /**
  * Created by Ivan on 16.02.14.
  */
+
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;

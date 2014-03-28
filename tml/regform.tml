@@ -13,6 +13,6 @@
     <input type="submit" value="Зарегистрироваться"/>
 </form>
 <a href="/">Назад</a>
-<p>${error}</p>
+<p>${message}</p>
 </body>
 </html>
