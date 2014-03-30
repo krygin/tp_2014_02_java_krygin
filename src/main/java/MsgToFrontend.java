@@ -11,5 +11,6 @@ public abstract class MsgToFrontend extends Msg {
             exec((Frontend) abonent);
         }
     }
-    abstract void exec(Frontend accountService);
+
+    abstract void exec(Frontend frontend);
 }

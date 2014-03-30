@@ -8,9 +8,6 @@ import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import sun.plugin2.message.Message;
-
-import javax.servlet.Servlet;
 
 public class Main {
     public static void main(String[] args) throws Exception {
