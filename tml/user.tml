@@ -23,5 +23,6 @@
 <p>Server time: ${serverTime}</p>
 <p>UserId: ${userId}</p>
 <p>${message}</p>
+<a href="/logout">Выйти</a>
 </body>
 </html>

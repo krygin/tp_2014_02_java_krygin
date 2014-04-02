@@ -1,3 +1,5 @@
+import results.registration.RegistrationResult;
+
 /**
  * Created by Ivan on 30.03.2014.
  */
@@ -14,6 +16,6 @@ final public class RegistrationResponseMsg extends MsgToFrontend {
 
     @Override
     void exec(Frontend frontend) {
-        frontend.handleRegistrationResult(sessionId, result);
+        frontend.handleRegistrationResponse(sessionId, result);
     }
 }

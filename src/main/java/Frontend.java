@@ -1,3 +1,6 @@
+import models.UserDataSet;
+import results.authorization.AuthorizationResult;
+import results.registration.RegistrationResult;
 import utils.PageGenerator;
 import utils.TimeHelper;
 
@@ -18,9 +21,9 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
     private static final String AUTHORIZATION_PAGE = "/authform";
     private static final String REGISTRATION_PAGE = "/regform";
     private static final String USER_PAGE = "/user";
-    private static final String INDEX_PAGE = "/index";
     private static final String AUTHORIZE_ACTION = "/authorize";
     private static final String REGISTER_ACTION = "/register";
+    private static final String LOADING_PAGE = "/loading";
     private Map<String, UserSession> sessions = new HashMap<>();
     private Address address;
     private MessageSystem messageSystem;
@@ -38,24 +41,26 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         return formatter.format(date);
     }
 
-    public void handleRegistrationResult(String sessionId, RegistrationResult result) {
+    public void handleRegistrationResponse(String sessionId, RegistrationResult result) {
+        UserSession userSession = sessions.get(sessionId);
         switch (result.getResult()) {
             case SUCCESS:
-                System.out.print("Всё ништяк");
+                userSession.setUserState(UserState.JUST_REGISTERED);
                 break;
             case FAIL:
-                System.out.print("Всё плохо");
+                userSession.setUserState(UserState.REGISTRATION_ERROR);
                 break;
         }
     }
 
-    public void handleAuthorizationResult(String sessionId, AuthorizationResult result) {
+    public void handleAuthorizationResponse(String sessionId, AuthorizationResult result) {
+        UserSession userSession = sessions.get(sessionId);
         switch (result.getResult()) {
             case SUCCESS:
-                System.out.print("Всё ништяк");
+                userSession.setUserState(UserState.LOGGED_IN);
                 break;
             case FAIL:
-                System.out.print("Всё плохо");
+                userSession.setUserState(UserState.AUTHORIZATION_ERROR);
                 break;
         }
     }
@@ -79,6 +84,9 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
             case USER_PAGE:
                 responseUserPage(resp, userSession);
                 break;
+            case LOADING_PAGE:
+                responseLoadingPage(resp, userSession);
+                break;
             default:
                 break;
         }
@@ -86,65 +94,44 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html;charset=utf-8");
+        resp.setStatus(HttpServletResponse.SC_OK);
+        HttpSession session = req.getSession();
+        String sessionId = session.getId();
+        if (sessions.get(sessionId) == null)
+            sessions.put(sessionId, new UserSession("", sessionId));
+        UserSession userSession = sessions.get(sessionId);
         switch (req.getPathInfo()) {
             case REGISTER_ACTION:
-                String username = req.getParameter("username");
-                String password1 = req.getParameter("password1");
-                String password2 = req.getParameter("password2");
-                if (username != null && password1 != null && password2 != null && password1.equals(password2)) {
-                    HttpSession session = req.getSession();
-                    String sessionId = session.getId();
-                    if (sessions.get(sessionId) == null)
-                        sessions.put(sessionId, new UserSession(username, sessionId));
-                    sessions.get(sessionId).setUserState(UserState.WAITING_FOR_REGISTRATION);
-                    Address frontendAddress = getAddress();
-                    Address accountServiceAddress = messageSystem.getAddressService().getAccountService();
-                    messageSystem.sendMessage(new RegistrationRequestMsg(frontendAddress, accountServiceAddress, username, password1, sessionId));
-                    resp.sendRedirect(REGISTRATION_PAGE);
-                }
+                handleRegistrationRequest(req, resp, userSession, messageSystem);
                 break;
             case AUTHORIZE_ACTION:
-                String username1 = req.getParameter("username");
-                String password = req.getParameter("password");
-                if (username1 != null && password != null) {
-                    HttpSession session = req.getSession();
-                    String sessionId = session.getId();
-                    if (sessions.get(sessionId) == null)
-                        sessions.put(sessionId, new UserSession(username1, sessionId));
-                    sessions.get(sessionId).setUserState(UserState.WAITING_FOR_AUTHORIZATION);
-                    Address frontendAddress = getAddress();
-                    Address accountServiceAddress = messageSystem.getAddressService().getAccountService();
-                    messageSystem.sendMessage(new AuthorizationRequestMsg(frontendAddress, accountServiceAddress, username1, password, sessionId));
-                    resp.sendRedirect(AUTHORIZATION_PAGE);
-                }
+                handleAuthorizationRequest(req, resp, userSession, messageSystem);
                 break;
             default:
                 break;
         }
+        resp.sendRedirect(LOADING_PAGE);
     }
 
     private void responseRegistrationPage(HttpServletResponse resp, UserSession userSession) throws IOException {
         Map<String, Object> pageVariables = new HashMap<>();
         String message;
-        if (userSession == null) {
-            message = new String("Добро пожаловать!!!");
-        } else {
-            switch (userSession.getUserState()) {
-                case LOGGED_IN:
-                    message = new String("Добро пожаловать, " + userSession.getUsername());
-                    break;
-                case WAITING_FOR_AUTHORIZATION:
-                    message = new String("Подождите, идет авторизация");
-                    break;
-                case WAITING_FOR_REGISTRATION:
-                    message = new String("Подождите, идет регистрация");
-                    break;
-                case AUTHORIZATION_ERROR:
-                    message = new String("Ошибка авторизации");
-                    break;
-                default:
-                    message = new String("ОШИБКА!!!");
-            }
+        switch (userSession.getUserState()) {
+            case IS_ANONYMOUS:
+                message = "Добро пожаловать";
+                break;
+            case LOGGED_IN:
+                message = "Добро пожаловать, " + userSession.getUsername();
+                break;
+            case REGISTRATION_ERROR:
+                message = "Во время регистрации произошла ошибка";
+                break;
+            case WRONG_DATA_INPUT:
+                message = "Введены некорректные данные или пароли не совпадают";
+                break;
+            default:
+                message = "ОШИБКА!!!";
         }
         pageVariables.put("message", message);
         resp.getWriter().println(PageGenerator.getPage("regform.tml", pageVariables));
@@ -153,25 +140,21 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
     private void responseAuthorizationPage(HttpServletResponse resp, UserSession userSession) throws IOException {
         Map<String, Object> pageVariables = new HashMap<>();
         String message;
-        if (userSession == null) {
-            message = "Добро пожаловать!!!";
-        } else {
-            switch (userSession.getUserState()) {
-                case LOGGED_IN:
-                    message = "Добро пожаловать, " + userSession.getUsername();
-                    break;
-                case WAITING_FOR_AUTHORIZATION:
-                    message = "Подождите, идет авторизация";
-                    break;
-                case WAITING_FOR_REGISTRATION:
-                    message = "Подождите, идет регистрация";
-                    break;
-                case AUTHORIZATION_ERROR:
-                    message = "Ошибка авторизации";
-                    break;
-                default:
-                    message = "ОШИБКА!!!";
-            }
+        switch (userSession.getUserState()) {
+            case IS_ANONYMOUS:
+                message = "Добро пожаловать";
+                break;
+            case LOGGED_IN:
+                message = "Добро пожаловать, " + userSession.getUsername();
+                break;
+            case AUTHORIZATION_ERROR:
+                message = "Во время авторизации произошла ошибка";
+                break;
+            case JUST_REGISTERED:
+                message = "Вы успешно зарегистрировались, пройдите процедуру авторизации";
+                break;
+            default:
+                message = "ОШИБКА!!!";
         }
         pageVariables.put("message", message);
         resp.getWriter().println(PageGenerator.getPage("authform.tml", pageVariables));
@@ -180,34 +163,90 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
     private void responseUserPage(HttpServletResponse resp, UserSession userSession) throws IOException {
         Map<String, Object> pageVariables = new HashMap<>();
         String message;
-        if (userSession == null) {
-            message = new String("Добро пожаловать!!! Вы не авторизованы!!! ");
-        } else {
-            switch (userSession.getUserState()) {
-                case IS_ANONYMOUS:
-                    message = new String("КУКУ");
-                    break;
-                case LOGGED_IN:
-                    message = "Добро пожаловать, " + userSession.getUsername();
-                    break;
-                case WAITING_FOR_AUTHORIZATION:
-                    message = "Подождите, идет авторизация";
-                    break;
-                case WAITING_FOR_REGISTRATION:
-                    message = "Подождите, идет регистрация";
-                    break;
-                case AUTHORIZATION_ERROR:
-                    message = "Ошибка авторизации";
-                    break;
-                default:
-                    message = "ОШИБКА!!!";
-            }
+        String userId;
+        switch (userSession.getUserState()) {
+            case IS_ANONYMOUS:
+                message = "Привет, анонимный пользователь =)";
+                userId = "Для того чтобы получить ID Вам необходимо пройти процедуру авторизации";
+                break;
+            case LOGGED_IN:
+                message = "Добро пожаловать, " + userSession.getUsername();
+                userId = userSession.getSessionId().toString();
+                break;
+            default:
+                message = "Привет, анонимный пользователь =)";
+                userId = "Для того чтобы получить ID Вам необходимо пройти процедуру авторизации";
         }
         pageVariables.put("refreshPeriod", "1000");
         pageVariables.put("serverTime", getTime());
-        pageVariables.put("userId", "Ни");
+        pageVariables.put("userId", userId);
         pageVariables.put("message", message);
         resp.getWriter().println(PageGenerator.getPage("user.tml", pageVariables));
+    }
+
+    private void responseLoadingPage(HttpServletResponse resp, UserSession userSession) throws IOException {
+        Map<String, Object> pageVariables = new HashMap<>();
+        String message;
+        switch (userSession.getUserState()) {
+            case WAITING_FOR_REGISTRATION:
+                message = "Подождите, идет регистрация";
+                break;
+            case WAITING_FOR_AUTHORIZATION:
+                message = "Подождите, идет авторизация";
+                break;
+            case LOGGED_IN:
+                resp.sendRedirect(USER_PAGE);
+                return;
+            case REGISTRATION_ERROR:
+                resp.sendRedirect(REGISTRATION_PAGE);
+                return;
+            case AUTHORIZATION_ERROR:
+                resp.sendRedirect(AUTHORIZATION_PAGE);
+                return;
+            case JUST_REGISTERED:
+                resp.sendRedirect(AUTHORIZATION_PAGE);
+                return;
+            default:
+                message = "Не";
+                break;
+        }
+        pageVariables.put("refreshPeriod", "1000");
+        pageVariables.put("message", message);
+        resp.getWriter().println(PageGenerator.getPage("loading.tml", pageVariables));
+    }
+
+    private void handleRegistrationRequest(HttpServletRequest req, HttpServletResponse resp, UserSession userSession, MessageSystem messageSystem) throws IOException {
+        String username = req.getParameter("username");
+        String password1 = req.getParameter("password1");
+        String password2 = req.getParameter("password2");
+        if (username.equals("") || password1.equals("") || password2.equals("") || !password1.equals(password2)) {
+            userSession.setUserState(UserState.WRONG_DATA_INPUT);
+            resp.sendRedirect(REGISTRATION_PAGE);
+            return;
+        }
+        UserDataSet user = new UserDataSet(username, password1);
+        Address frontendAddress = messageSystem.getAddressService().getFrontend();
+        Address accountServiceAddress = messageSystem.getAddressService().getAccountService();
+        String sessionId = userSession.getSessionId();
+        messageSystem.sendMessage(new RegistrationRequestMsg(frontendAddress, accountServiceAddress, user, sessionId));
+        userSession.setUserState(UserState.WAITING_FOR_REGISTRATION);
+    }
+
+    private void handleAuthorizationRequest(HttpServletRequest req, HttpServletResponse resp, UserSession userSession, MessageSystem messageSystem) throws IOException {
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        if (username.equals("") || password.equals("")) {
+            userSession.setUserState(UserState.WRONG_DATA_INPUT);
+            resp.sendRedirect(AUTHORIZATION_PAGE);
+            return;
+        }
+        UserDataSet user = new UserDataSet(username, password);
+        Address frontendAddress = messageSystem.getAddressService().getFrontend();
+        Address accountServiceAddress = messageSystem.getAddressService().getAccountService();
+        String sessionId = userSession.getSessionId();
+        messageSystem.sendMessage(new AuthorizationRequestMsg(frontendAddress, accountServiceAddress, user, sessionId));
+        userSession.setUserState(UserState.WAITING_FOR_AUTHORIZATION);
+        userSession.setUsername(username);
     }
 
     @Override

@@ -1,3 +1,5 @@
+import results.authorization.AuthorizationResult;
+
 /**
  * Created by Ivan on 30.03.2014.
  */
@@ -13,6 +15,6 @@ final public class AuthorizationResponseMsg extends MsgToFrontend {
 
     @Override
     void exec(Frontend frontend) {
-        frontend.handleAuthorizationResult(sessionId, result);
+        frontend.handleAuthorizationResponse(sessionId, result);
     }
 }

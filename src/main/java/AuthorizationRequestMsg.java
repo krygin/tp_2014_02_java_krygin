@@ -1,21 +1,22 @@
+import models.UserDataSet;
+import results.authorization.AuthorizationResult;
+
 /**
  * Created by Ivan on 30.03.2014.
  */
 final public class AuthorizationRequestMsg extends MsgToAS {
-    private String username;
-    private String password;
+    private UserDataSet user;
     private String sessionId;
 
-    protected AuthorizationRequestMsg(Address from, Address to, String username, String password, String sessionId) {
+    protected AuthorizationRequestMsg(Address from, Address to, UserDataSet user, String sessionId) {
         super(from, to);
-        this.username = username;
-        this.password = password;
+        this.user = user;
         this.sessionId = sessionId;
     }
 
     @Override
     void exec(AccountService accountService) {
-        AuthorizationResult result = accountService.authorize(username, password);
+        AuthorizationResult result = accountService.authorize(user);
         accountService.getMessageSystem().sendMessage(new AuthorizationResponseMsg(getTo(), getFrom(), result, sessionId));
     }
 }

@@ -1,6 +1,10 @@
 import models.UserDataSet;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
+import results.authorization.AuthorizationResult;
+import results.authorization.AuthorizationResultEnum;
+import results.registration.RegistrationResult;
+import results.registration.RegistrationResultEnum;
 import utils.HibernateUtil;
 import utils.TimeHelper;
 
@@ -34,9 +38,8 @@ public class AccountService implements Runnable, Abonent {
         }
     }
 
-    public RegistrationResult register(String username, String password) {
+    public RegistrationResult register(UserDataSet user) {
         try {
-            UserDataSet user = new UserDataSet(username, password);
             userDataSetDAO.add(user);
             Integer idUser = userDataSetDAO.get(user.getUsername(), user.getPassword()).getIdUser();
             return new RegistrationResult(RegistrationResultEnum.SUCCESS, idUser);
@@ -45,9 +48,8 @@ public class AccountService implements Runnable, Abonent {
         }
     }
 
-    public AuthorizationResult authorize(String username, String password) {
+    public AuthorizationResult authorize(UserDataSet user) {
         try {
-            UserDataSet user = new UserDataSet(username, password);
             Integer idUser = userDataSetDAO.get(user.getUsername(), user.getPassword()).getIdUser();
             return new AuthorizationResult(AuthorizationResultEnum.SUCCESS, idUser);
         } catch (HibernateException | NullPointerException e) {
