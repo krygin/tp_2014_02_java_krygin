@@ -1,5 +1,6 @@
-package utils; /**
- * Created by Ivan on 16.02.14.
+package utils;
+/**
+ * Created by Ivan on 16.02.14 in 19:43.
  */
 
 import freemarker.template.Configuration;

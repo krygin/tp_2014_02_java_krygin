@@ -1,7 +1,9 @@
+package services.frontend;
+
 /**
- * Created by Ivan on 27.03.2014.
+ * Created by Ivan on 27.03.2014 in 19:44.
  */
-public enum UserState {
+enum UserState {
     IS_ANONYMOUS,
     LOGGED_IN,
     AUTHORIZATION_ERROR,

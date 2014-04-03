@@ -1,7 +1,7 @@
 package results.authorization;
 
 /**
- * Created by Ivan on 30.03.2014.
+ * Created by Ivan on 30.03.2014 in 19:42.
  */
 final public class AuthorizationResult {
     private AuthorizationResultEnum result;

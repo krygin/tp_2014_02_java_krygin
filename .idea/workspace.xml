@@ -2,20 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cd818b0-633c-49f5-9466-6f30698a715b" name="Default" comment="Message System v2">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tml/home.tml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tml/loading.tml" />
-      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\AuthorizationResult.java" afterPath="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResult.java" />
-      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\AuthorizationResultEnum.java" afterPath="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResultEnum.java" />
-      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\RegistrationResult.java" afterPath="$PROJECT_DIR$/src/main/java/results/registration/RegistrationResult.java" />
-      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\RegistrationResultEnum.java" afterPath="$PROJECT_DIR$/src/main/java/results/registration/RegistrationResultEnum.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AccountService.java" afterPath="$PROJECT_DIR$/src/main/java/AccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AuthorizationRequestMsg.java" afterPath="$PROJECT_DIR$/src/main/java/AuthorizationRequestMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/AuthorizationResponseMsg.java" afterPath="$PROJECT_DIR$/src/main/java/AuthorizationResponseMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Frontend.java" afterPath="$PROJECT_DIR$/src/main/java/Frontend.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/RegistrationRequestMsg.java" afterPath="$PROJECT_DIR$/src/main/java/RegistrationRequestMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/RegistrationResponseMsg.java" afterPath="$PROJECT_DIR$/src/main/java/RegistrationResponseMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/UserState.java" afterPath="$PROJECT_DIR$/src/main/java/UserState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tml/user.tml" afterPath="$PROJECT_DIR$/tml/user.tml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/message_system/Abonent.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/constants/Actions.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Ivan.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/constants/Paths.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/message_system/messages/RegistrationResponseMsg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tml/index.tml" />
+      <change type="DELETED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\Abonent.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\RegistrationResponseMsg.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\tml\home.tml" afterPath="" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\AccountService.java" afterPath="$PROJECT_DIR$/src/main/java/services/account_service/AccountService.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\Address.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/Address.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\AddressService.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/AddressService.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\AuthorizationRequestMsg.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/messages/AuthorizationRequestMsg.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\AuthorizationResponseMsg.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/messages/AuthorizationResponseMsg.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\Frontend.java" afterPath="$PROJECT_DIR$/src/main/java/services/frontend/Frontend.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\GlobalConstants.java" afterPath="$PROJECT_DIR$/src/main/java/constants/Constants.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\MessageSystem.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/MessageSystem.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\Msg.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/messages/Msg.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\MsgToAS.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/messages/MsgToAS.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\MsgToFrontend.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/messages/MsgToFrontend.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\RegistrationRequestMsg.java" afterPath="$PROJECT_DIR$/src/main/java/message_system/messages/RegistrationRequestMsg.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\UserSession.java" afterPath="$PROJECT_DIR$/src/main/java/services/frontend/UserSession.java" />
+      <change type="MOVED" beforePath="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\java\UserState.java" afterPath="$PROJECT_DIR$/src/main/java/services/frontend/UserState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResult.java" afterPath="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResult.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResultEnum.java" afterPath="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResultEnum.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/utils/PageGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/utils/PageGenerator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/results/registration/RegistrationResult.java" afterPath="$PROJECT_DIR$/src/main/java/results/registration/RegistrationResult.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/results/registration/RegistrationResultEnum.java" afterPath="$PROJECT_DIR$/src/main/java/results/registration/RegistrationResultEnum.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/utils/TimeHelper.java" afterPath="$PROJECT_DIR$/src/main/java/utils/TimeHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/index.html" afterPath="$PROJECT_DIR$/static/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tp_2014_02_java_krygin.iws" />
@@ -80,110 +97,7 @@
     <favorites_list name="tp_2014_02_java_krygin" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="UserState.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/UserState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="323">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.tml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tml/user.tml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="561">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Frontend.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Frontend.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
-              <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
-              <folding>
-                <element signature="method#Frontend#0;class#Frontend#0" expanded="false" />
-                <element signature="method#getTime#0;class#Frontend#0" expanded="false" />
-                <element signature="method#handleRegistrationResponse#0;class#Frontend#0" expanded="false" />
-                <element signature="method#handleAuthorizationResponse#0;class#Frontend#0" expanded="false" />
-                <element signature="method#doPost#0;class#Frontend#0" expanded="false" />
-                <element signature="method#responseRegistrationPage#0;class#Frontend#0" expanded="false" />
-                <element signature="method#responseAuthorizationPage#0;class#Frontend#0" expanded="false" />
-                <element signature="method#responseUserPage#0;class#Frontend#0" expanded="false" />
-                <element signature="method#responseLoadingPage#0;class#Frontend#0" expanded="false" />
-                <element signature="method#handleRegistrationRequest#0;class#Frontend#0" expanded="false" />
-                <element signature="method#handleAuthorizationRequest#0;class#Frontend#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="714">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.tml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tml/home.tml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289">
-              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthorizationResponseMsg.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/AuthorizationResponseMsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="442">
-              <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationResponseMsg.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/RegistrationResponseMsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="459">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationRequestMsg.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/RegistrationRequestMsg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5233645" vertical-offset="121" max-vertical-offset="459">
-              <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -196,57 +110,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tml/authentication.tml" />
-        <option value="$PROJECT_DIR$/static/index.html" />
-        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/JavaMD5Hash.java" />
-        <option value="$PROJECT_DIR$/src/test/java/JavaMD5HashTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/UserEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/UserEntityDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Config.java" />
-        <option value="$PROJECT_DIR$/src/main/java/HibernateUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DBConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Hasher.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/Hasher.java" />
-        <option value="$PROJECT_DIR$/src/test/java/HasherTest.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Address.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Abonent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Msg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/TimeHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MsgToAS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Paths.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Actions.java" />
         <option value="$PROJECT_DIR$/src/main/java/GlobalConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AddNewUserMsg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AuthorizationState.java" />
-        <option value="$PROJECT_DIR$/tml/authform.tml" />
-        <option value="$PROJECT_DIR$/tml/regform.tml" />
-        <option value="$PROJECT_DIR$/src/main/java/MessageSystem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AddressService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/models/UserDataSet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CreateNewUserMsg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MsgToFrontend.java" />
-        <option value="$PROJECT_DIR$/src/main/java/UserSession.java" />
-        <option value="$PROJECT_DIR$/src/main/java/RegistrationResultEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AuthorizationResultEnum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AuthorizationResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/RegistrationResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/CreatedBy.java" />
         <option value="$PROJECT_DIR$/src/main/java/RegistrationResponseMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AuthorizationRequestMsg.java" />
         <option value="$PROJECT_DIR$/src/main/java/AuthorizationResponseMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResultEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/constants/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Msg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/PageGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/RegistrationRequestMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/models/UserDataSet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/TimeHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/UserSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/constants/Actions.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Abonent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AccountService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AddressService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Frontend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MessageSystem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MsgToAS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/MsgToFrontend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/UserState.java" />
+        <option value="$PROJECT_DIR$/src/main/java/results/registration/RegistrationResult.java" />
+        <option value="$PROJECT_DIR$/src/main/java/results/registration/RegistrationResultEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/AccountService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/AddressService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/Frontend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Address.java" />
         <option value="$PROJECT_DIR$/src/main/java/UserDataSetDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/UserDataSetDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/results/AuthorizationResult.java" />
-        <option value="$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResult.java" />
-        <option value="$PROJECT_DIR$/tml/loading.tml" />
-        <option value="$PROJECT_DIR$/src/main/java/RegistrationRequestMsg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AccountService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/AuthorizationRequestMsg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/UserState.java" />
-        <option value="$PROJECT_DIR$/tml/user.tml" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/Abonent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/messages/RegistrationRequestMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/messages/AuthorizationResponseMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/messages/MsgToFrontend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/messages/MsgToAS.java" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/messages/RegistrationResponseMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/MessageSystem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/messages/Msg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/message_system/messages/AuthorizationRequestMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/constants/Paths.java" />
+        <option value="$PROJECT_DIR$/src/test/java/HasherTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/frontend/Frontend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/services/account_service/AccountService.java" />
         <option value="$PROJECT_DIR$/tml/index.tml" />
-        <option value="$PROJECT_DIR$/src/main/java/Frontend.java" />
+        <option value="$PROJECT_DIR$/static/index.html" />
       </list>
     </option>
   </component>
@@ -262,6 +176,25 @@
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Tapestry inspections</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>TelReferencesInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -291,17 +224,13 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="tp_2014_02_java_krygin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -381,10 +310,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -430,7 +355,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -456,14 +385,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="account_service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="TapestryProjectView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -492,22 +425,24 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="LayoutCode.rearrangeEntriesJava" value="true" />
+    <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
+    <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\static" />
+      <recent name="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\resources" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="models" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ivan\IdeaProjects\tp_2014_02_java_krygin\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -767,6 +702,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -787,16 +728,32 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
+    <configuration default="false" name="All in tp_2014_02_java_krygin" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="tp_2014_02_java_krygin" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="Application.Hasher" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.HasherTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in tp_2014_02_java_krygin" />
     </list>
     <recent_temporary>
       <list size="3">
@@ -863,6 +820,9 @@
       <workItem from="1396470567584" duration="6350000" />
       <workItem from="1396477087172" duration="1484000" />
       <workItem from="1396478597108" duration="158000" />
+      <workItem from="1396478905844" duration="187000" />
+      <workItem from="1396534989669" duration="4015000" />
+      <workItem from="1396539041072" duration="6112000" />
     </task>
     <task id="LOCAL-00001" summary="HW1 v0">
       <created>1392819239378</created>
@@ -880,50 +840,70 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150180000" />
+    <option name="totallyTimeSpent" value="160494000" />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22527881" sideWeight="0.3648294" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.05513595" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.05513595" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37745097" sideWeight="0.7507553" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51888216" sideWeight="0.4329502" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Tapestry" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.51888216" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Tapestry" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.51888216" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49022803" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26435044" sideWeight="0.63254595" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3137255" sideWeight="0.5558912" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26435044" sideWeight="0.63254595" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16666667" sideWeight="0.5558912" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32736155" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5751634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37745097" sideWeight="0.7507553" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51888216" sideWeight="0.4329502" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49019608" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5866013" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="JPA Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3627451" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5751634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39379084" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -941,8 +921,8 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09313726" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -983,92 +963,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="uml://Persistence/JavaeeElement:/d0f039f7/NewPersistenceUnit/tp_2014_02_java_krygin/jpa/JPA/PersistenceModel">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>Persistence</ID>
-          <OriginalElement>JavaeeElement:/d0f039f7/NewPersistenceUnit/tp_2014_02_java_krygin/jpa/JPA/PersistenceModel</OriginalElement>
-          <nodes>
-            <node x="0.0" y="0.0">UserEntity#file://C:/Users/Ivan/IdeaProjects/tp_2014_02_java_krygin/src/main/java/models/UserEntity.java</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="23.0" y="26.0" />
-          <SelectedNodes>
-            <node>UserEntity#file://C:/Users/Ivan/IdeaProjects/tp_2014_02_java_krygin/src/main/java/models/UserEntity.java</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Superclasses</Category>
-            <Category>Embeddables</Category>
-            <Category>Properties</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/PageGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
-          <caret line="27" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="807" max-vertical-offset="1088">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/HasherTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GlobalConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tml/regform.tml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="391">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar!/javax/servlet/http/HttpServletRequest.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6389414" vertical-offset="0" max-vertical-offset="1411">
-          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Abonent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TimeHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.1.0.M0/jetty-server-9.1.0.M0.jar!/org/eclipse/jetty/server/Response.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.52" vertical-offset="2505" max-vertical-offset="3230">
-          <caret line="155" column="15" selection-start-line="155" selection-start-column="15" selection-end-line="155" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/jetty-server/9.1.0.M0/jetty-server-9.1.0.M0.jar!/org/eclipse/jetty/server/Request.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.16" vertical-offset="4673" max-vertical-offset="5712">
@@ -1084,52 +978,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="74" max-vertical-offset="408">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utils/Hasher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="578">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/models/UserDataSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="237" max-vertical-offset="1190">
-          <caret line="34" column="10" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MsgToAS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MsgToFrontend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/MessageSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="527">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AddressService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1203,181 +1055,319 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Msg.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.21340388" vertical-offset="2106" max-vertical-offset="3757">
+          <caret line="131" column="3" selection-start-line="131" selection-start-column="3" selection-end-line="131" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/results/registration/RegistrationResultEnum.java">
+    <entry file="file://$PROJECT_DIR$/tml/regform.tml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="391">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/results/registration/RegistrationResult.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="595">
-          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserDataSetDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResultEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="255">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.33163264" vertical-offset="1128" max-vertical-offset="51085">
+          <caret line="107" column="19" selection-start-line="107" selection-start-column="19" selection-end-line="107" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResult.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="14" column="48" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tml/authform.tml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tml/loading.tml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="306">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserDataSetDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="578">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="629">
-          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="283" max-vertical-offset="952">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AuthorizationRequestMsg.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/AuthorizationResponseMsg.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/results/authorization/AuthorizationResultEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/HibernateUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/RegistrationResponseMsg.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/PageGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/UserState.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/models/UserDataSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1190">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TimeHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="272">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tml/user.tml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="561">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="17" />
+        <state vertical-scroll-proportion="-4.076923" vertical-offset="251" max-vertical-offset="561">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Actions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/results/registration/RegistrationResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/results/registration/RegistrationResultEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1724138" vertical-offset="0" max-vertical-offset="493">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/AddressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="e#466#467#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="357">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/account_service/UserDataSetDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="47" max-vertical-offset="612">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/frontend/UserState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/frontend/UserSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="646">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/Abonent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
+          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/messages/AuthorizationResponseMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/messages/MsgToFrontend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/messages/MsgToAS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/messages/RegistrationResponseMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/MessageSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding>
+            <element signature="e#881#882#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1051#1052#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/messages/Msg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/messages/RegistrationRequestMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="544">
+          <caret line="23" column="68" selection-start-line="23" selection-start-column="68" selection-end-line="23" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/message_system/messages/AuthorizationRequestMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50530785" vertical-offset="0" max-vertical-offset="527">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/constants/Paths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35123968" vertical-offset="0" max-vertical-offset="484">
+          <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/HasherTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6322314" vertical-offset="0" max-vertical-offset="493">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/account_service/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7458678" vertical-offset="370" max-vertical-offset="1241">
+          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tml/loading.tml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33406115" vertical-offset="0" max-vertical-offset="458">
+          <caret line="9" column="48" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tml/authform.tml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58352405" vertical-offset="0" max-vertical-offset="437">
+          <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="595">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tml/home.tml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289">
-          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Frontend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1411">
-          <caret line="25" column="58" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+        <state vertical-scroll-proportion="-0.13822894" vertical-offset="149" max-vertical-offset="612">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding>
-            <element signature="method#Frontend#0;class#Frontend#0" expanded="false" />
-            <element signature="method#getTime#0;class#Frontend#0" expanded="false" />
-            <element signature="method#handleRegistrationResponse#0;class#Frontend#0" expanded="false" />
-            <element signature="method#handleAuthorizationResponse#0;class#Frontend#0" expanded="false" />
-            <element signature="method#doPost#0;class#Frontend#0" expanded="false" />
-            <element signature="method#responseRegistrationPage#0;class#Frontend#0" expanded="false" />
-            <element signature="method#responseAuthorizationPage#0;class#Frontend#0" expanded="false" />
-            <element signature="method#responseUserPage#0;class#Frontend#0" expanded="false" />
-            <element signature="method#responseLoadingPage#0;class#Frontend#0" expanded="false" />
-            <element signature="method#handleRegistrationRequest#0;class#Frontend#0" expanded="false" />
-            <element signature="method#handleAuthorizationRequest#0;class#Frontend#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/RegistrationRequestMsg.java">
+    <entry file="file://$PROJECT_DIR$/tml/index.tml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5233645" vertical-offset="121" max-vertical-offset="459">
-          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.46681923" vertical-offset="0" max-vertical-offset="437">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/frontend/Frontend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7388535" vertical-offset="621" max-vertical-offset="5100">
+          <caret line="59" column="10" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,3 +1,10 @@
+package services.frontend;
+
+import message_system.Abonent;
+import message_system.Address;
+import message_system.MessageSystem;
+import message_system.messages.AuthorizationRequestMsg;
+import message_system.messages.RegistrationRequestMsg;
 import models.UserDataSet;
 import results.authorization.AuthorizationResult;
 import results.registration.RegistrationResult;
@@ -16,17 +23,17 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import static constants.Actions.AUTHORIZE_ACTION;
+import static constants.Actions.REGISTER_ACTION;
+import static constants.Constants.TICK_TIME;
+import static constants.Paths.*;
+import static services.frontend.UserState.*;
+
 public class Frontend extends HttpServlet implements Runnable, Abonent {
 
-    private static final String AUTHORIZATION_PAGE = "/authform";
-    private static final String REGISTRATION_PAGE = "/regform";
-    private static final String USER_PAGE = "/user";
-    private static final String AUTHORIZE_ACTION = "/authorize";
-    private static final String REGISTER_ACTION = "/register";
-    private static final String LOADING_PAGE = "/loading";
-    private Map<String, UserSession> sessions = new HashMap<>();
-    private Address address;
-    private MessageSystem messageSystem;
+    private final Map<String, UserSession> sessions = new HashMap<>();
+    private final Address address;
+    private final MessageSystem messageSystem;
 
     public Frontend(MessageSystem messageSystem) {
         this.messageSystem = messageSystem;
@@ -35,20 +42,39 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         messageSystem.getAddressService().setFrontend(address);
     }
 
-    public static String getTime() {
+    private static String getTime() {
         Date date = new Date();
         DateFormat formatter = new SimpleDateFormat("HH.mm.ss");
         return formatter.format(date);
+    }
+
+    @Override
+    public Address getAddress() {
+        return address;
+    }
+
+    @Override
+    public void run() {
+        //noinspection InfiniteLoopStatement
+        while (true) {
+            messageSystem.execForAbonent(this);
+            TimeHelper.sleep(TICK_TIME);
+        }
+    }
+
+    @SuppressWarnings("UnusedDeclaration")
+    public MessageSystem getMessageSystem() {
+        return messageSystem;
     }
 
     public void handleRegistrationResponse(String sessionId, RegistrationResult result) {
         UserSession userSession = sessions.get(sessionId);
         switch (result.getResult()) {
             case SUCCESS:
-                userSession.setUserState(UserState.JUST_REGISTERED);
+                userSession.setUserState(JUST_REGISTERED);
                 break;
             case FAIL:
-                userSession.setUserState(UserState.REGISTRATION_ERROR);
+                userSession.setUserState(REGISTRATION_ERROR);
                 break;
         }
     }
@@ -57,10 +83,10 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         UserSession userSession = sessions.get(sessionId);
         switch (result.getResult()) {
             case SUCCESS:
-                userSession.setUserState(UserState.LOGGED_IN);
+                userSession.setUserState(LOGGED_IN);
                 break;
             case FAIL:
-                userSession.setUserState(UserState.AUTHORIZATION_ERROR);
+                userSession.setUserState(AUTHORIZATION_ERROR);
                 break;
         }
     }
@@ -72,7 +98,7 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         HttpSession session = req.getSession();
         String sessionId = session.getId();
         if (sessions.get(sessionId) == null)
-            sessions.put(sessionId, new UserSession("", sessionId));
+            sessions.put(sessionId, new UserSession(sessionId));
         UserSession userSession = sessions.get(sessionId);
         switch (req.getPathInfo()) {
             case AUTHORIZATION_PAGE:
@@ -87,8 +113,11 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
             case LOADING_PAGE:
                 responseLoadingPage(resp, userSession);
                 break;
-            default:
+            case INDEX_PAGE:
+                responseIndexPage(resp, userSession);
                 break;
+            default:
+                resp.sendRedirect(INDEX_PAGE);
         }
     }
 
@@ -99,7 +128,7 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         HttpSession session = req.getSession();
         String sessionId = session.getId();
         if (sessions.get(sessionId) == null)
-            sessions.put(sessionId, new UserSession("", sessionId));
+            sessions.put(sessionId, new UserSession(sessionId));
         UserSession userSession = sessions.get(sessionId);
         switch (req.getPathInfo()) {
             case REGISTER_ACTION:
@@ -112,6 +141,23 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
                 break;
         }
         resp.sendRedirect(LOADING_PAGE);
+    }
+
+    private void responseIndexPage(HttpServletResponse resp, UserSession userSession) throws IOException {
+        Map<String, Object> pageVariables = new HashMap<>();
+        String message;
+        switch (userSession.getUserState()) {
+            case IS_ANONYMOUS:
+                message = "Добро пожаловать";
+                break;
+            case LOGGED_IN:
+                message = "Добро пожаловать, " + userSession.getUsername();
+                break;
+            default:
+                message = "Добро пожаловать";
+        }
+        pageVariables.put("message", message);
+        resp.getWriter().println(PageGenerator.getPage("index.tml", pageVariables));
     }
 
     private void responseRegistrationPage(HttpServletResponse resp, UserSession userSession) throws IOException {
@@ -171,7 +217,7 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
                 break;
             case LOGGED_IN:
                 message = "Добро пожаловать, " + userSession.getUsername();
-                userId = userSession.getSessionId().toString();
+                userId = userSession.getSessionId();
                 break;
             default:
                 message = "Привет, анонимный пользователь =)";
@@ -220,7 +266,7 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         String password1 = req.getParameter("password1");
         String password2 = req.getParameter("password2");
         if (username.equals("") || password1.equals("") || password2.equals("") || !password1.equals(password2)) {
-            userSession.setUserState(UserState.WRONG_DATA_INPUT);
+            userSession.setUserState(WRONG_DATA_INPUT);
             resp.sendRedirect(REGISTRATION_PAGE);
             return;
         }
@@ -229,14 +275,14 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         Address accountServiceAddress = messageSystem.getAddressService().getAccountService();
         String sessionId = userSession.getSessionId();
         messageSystem.sendMessage(new RegistrationRequestMsg(frontendAddress, accountServiceAddress, user, sessionId));
-        userSession.setUserState(UserState.WAITING_FOR_REGISTRATION);
+        userSession.setUserState(WAITING_FOR_REGISTRATION);
     }
 
     private void handleAuthorizationRequest(HttpServletRequest req, HttpServletResponse resp, UserSession userSession, MessageSystem messageSystem) throws IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         if (username.equals("") || password.equals("")) {
-            userSession.setUserState(UserState.WRONG_DATA_INPUT);
+            userSession.setUserState(WRONG_DATA_INPUT);
             resp.sendRedirect(AUTHORIZATION_PAGE);
             return;
         }
@@ -245,24 +291,7 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         Address accountServiceAddress = messageSystem.getAddressService().getAccountService();
         String sessionId = userSession.getSessionId();
         messageSystem.sendMessage(new AuthorizationRequestMsg(frontendAddress, accountServiceAddress, user, sessionId));
-        userSession.setUserState(UserState.WAITING_FOR_AUTHORIZATION);
+        userSession.setUserState(WAITING_FOR_AUTHORIZATION);
         userSession.setUsername(username);
-    }
-
-    @Override
-    public Address getAddress() {
-        return address;
-    }
-
-    @Override
-    public void run() {
-        while (true) {
-            messageSystem.execForAbonent(this);
-            TimeHelper.sleep(GlobalConstants.TICK_TIME);
-        }
-    }
-
-    public MessageSystem getMessageSystem() {
-        return messageSystem;
     }
 }

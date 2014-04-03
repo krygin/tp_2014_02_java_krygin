@@ -1,5 +1,7 @@
+package message_system;
+
 /**
- * Created by Ivan on 28.03.2014.
+ * Created by Ivan on 28.03.2014 in 19:42.
  */
 public class AddressService {
     private Address frontend;

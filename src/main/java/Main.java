@@ -1,15 +1,18 @@
 /**
- * Created by Ivan on 12.02.14.
+ * Created by Ivan on 12.02.14 in 19:43.
  */
 
+import message_system.MessageSystem;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerList;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import services.account_service.AccountService;
+import services.frontend.Frontend;
 
-public class Main {
+class Main {
     public static void main(String[] args) throws Exception {
         MessageSystem messageSystem = new MessageSystem();
         Frontend frontend = new Frontend(messageSystem);

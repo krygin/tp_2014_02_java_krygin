@@ -1,3 +1,8 @@
+package services.account_service;
+
+import message_system.Abonent;
+import message_system.Address;
+import message_system.MessageSystem;
 import models.UserDataSet;
 import org.hibernate.HibernateException;
 import org.hibernate.SessionFactory;
@@ -8,15 +13,17 @@ import results.registration.RegistrationResultEnum;
 import utils.HibernateUtil;
 import utils.TimeHelper;
 
+import static constants.Constants.TICK_TIME;
+
 /**
- * Created by Ivan on 26.03.2014.
+ * Created by Ivan on 26.03.2014 in 19:40.
  */
 public class AccountService implements Runnable, Abonent {
-    private Address address;
-    private MessageSystem messageSystem;
+    private final Address address;
+    private final MessageSystem messageSystem;
 
-    private SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-    private UserDataSetDAO userDataSetDAO = new UserDataSetDAOImpl(sessionFactory);
+    private final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    private final UserDataSetDAO userDataSetDAO = new UserDataSetDAO(sessionFactory);
 
     public AccountService(MessageSystem messageSystem) {
         this.messageSystem = messageSystem;
@@ -32,9 +39,10 @@ public class AccountService implements Runnable, Abonent {
 
     @Override
     public void run() {
+        //noinspection InfiniteLoopStatement
         while (true) {
             messageSystem.execForAbonent(this);
-            TimeHelper.sleep(GlobalConstants.TICK_TIME);
+            TimeHelper.sleep(TICK_TIME);
         }
     }
 

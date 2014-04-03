@@ -1,14 +1,18 @@
+package message_system;
+
+import message_system.messages.Msg;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- * Created by Ivan on 26.03.2014.
+ * Created by Ivan on 26.03.2014 in 19:43.
  */
 public class MessageSystem {
-    private Map<Address, ConcurrentLinkedQueue<Msg>> messages = new HashMap<>();
-    private AddressService addressService = new AddressService();
+    private final Map<Address, ConcurrentLinkedQueue<Msg>> messages = new HashMap<>();
+    private final AddressService addressService = new AddressService();
 
     public void sendMessage(Msg message) {
         Queue<Msg> messageQueue = messages.get(message.getTo());

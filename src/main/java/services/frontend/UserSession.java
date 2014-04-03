@@ -1,14 +1,15 @@
+package services.frontend;
+
 /**
- * Created by Ivan on 26.03.2014.
+ * Created by Ivan on 26.03.2014 in 19:44.
  */
-public class UserSession {
+class UserSession {
     private String sessionId;
     private String username;
     private Long userId;
     private UserState userState;
 
-    public UserSession(String username, String sessionId) {
-        this.username = username;
+    public UserSession(String sessionId) {
         this.sessionId = sessionId;
         this.userState = UserState.IS_ANONYMOUS;
     }

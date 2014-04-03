@@ -1,8 +1,14 @@
+package message_system.messages;
+
+import message_system.Abonent;
+import message_system.Address;
+import services.account_service.AccountService;
+
 /**
- * Created by Ivan on 26.03.2014.
+ * Created by Ivan on 26.03.2014 in 19:43.
  */
 public abstract class MsgToAS extends Msg {
-    protected MsgToAS(Address from, Address to) {
+    MsgToAS(Address from, Address to) {
         super(from, to);
     }
 
