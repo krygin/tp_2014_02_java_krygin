@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>User</title>
+    <title>services.frontend.User</title>
     <script>
         function setClientTime() {
             var currentTime = new Date();
@@ -20,9 +20,12 @@
 </head>
 <body onload='setInterval(function(){refresh()},${refreshPeriod} ); setClientTime();'>
 <p>Client time: <span id='ClientTime'></span></p>
+
 <p>Server time: ${serverTime}</p>
+
 <p>UserId: ${userId}</p>
+
 <p>${message}</p>
-<a href="/logout">Выйти</a>
+<a href="logout">Выйти</a>
 </body>
 </html>

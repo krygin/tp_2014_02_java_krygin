@@ -10,6 +10,7 @@ import results.authorization.AuthorizationResult;
 import results.authorization.AuthorizationResultEnum;
 import results.registration.RegistrationResult;
 import results.registration.RegistrationResultEnum;
+import services.frontend.User;
 import utils.HibernateUtil;
 import utils.TimeHelper;
 
@@ -21,15 +22,23 @@ import static constants.Constants.TICK_TIME;
 public class AccountService implements Runnable, Abonent {
     private final Address address;
     private final MessageSystem messageSystem;
+    private final UserDataSetDAO userDataSetDAO;
 
-    private final SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-    private final UserDataSetDAO userDataSetDAO = new UserDataSetDAO(sessionFactory);
-
-    public AccountService(MessageSystem messageSystem) {
+    public AccountService(MessageSystem messageSystem, String configuration) {
         this.messageSystem = messageSystem;
         this.address = new Address();
+        SessionFactory sessionFactory = new HibernateUtil(configuration).getSessionFactory();
+        this.userDataSetDAO = new UserDataSetDAO(sessionFactory);
         messageSystem.addService(this);
         messageSystem.getAddressService().setAccountService(address);
+    }
+
+
+    @SuppressWarnings("SameParameterValue")
+    AccountService(MessageSystem messageSystem, Address address, UserDataSetDAO userDataSetDAO) {
+        this.messageSystem = messageSystem;
+        this.address = address;
+        this.userDataSetDAO = userDataSetDAO;
     }
 
     @Override
@@ -46,22 +55,24 @@ public class AccountService implements Runnable, Abonent {
         }
     }
 
-    public RegistrationResult register(UserDataSet user) {
+    public RegistrationResult register(User user) {
         try {
-            userDataSetDAO.add(user);
-            Integer idUser = userDataSetDAO.get(user.getUsername(), user.getPassword()).getIdUser();
+            UserDataSet userDataSet = new UserDataSet(user.getUsername(), user.getPassword());
+            userDataSetDAO.addUser(userDataSet);
+            Integer idUser = userDataSetDAO.getUser(userDataSet.getUsername(), userDataSet.getPassword());
             return new RegistrationResult(RegistrationResultEnum.SUCCESS, idUser);
         } catch (HibernateException | NullPointerException e) {
-            return new RegistrationResult(RegistrationResultEnum.FAIL, null);
+            return new RegistrationResult(RegistrationResultEnum.FAILURE, null);
         }
     }
 
-    public AuthorizationResult authorize(UserDataSet user) {
+    public AuthorizationResult authorize(User user) {
         try {
-            Integer idUser = userDataSetDAO.get(user.getUsername(), user.getPassword()).getIdUser();
-            return new AuthorizationResult(AuthorizationResultEnum.SUCCESS, idUser);
+            UserDataSet userDataSet = new UserDataSet(user.getUsername(), user.getPassword());
+            int id = userDataSetDAO.getUser(userDataSet.getUsername(), userDataSet.getPassword());
+            return new AuthorizationResult(AuthorizationResultEnum.SUCCESS, id);
         } catch (HibernateException | NullPointerException e) {
-            return new AuthorizationResult(AuthorizationResultEnum.FAIL, null);
+            return new AuthorizationResult(AuthorizationResultEnum.FAILURE, null);
         }
     }
 

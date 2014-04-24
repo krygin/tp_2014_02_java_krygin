@@ -16,15 +16,7 @@ public final class RegistrationResult {
         return result;
     }
 
-    public void setResult(RegistrationResultEnum result) {
-        this.result = result;
-    }
-
     public Integer getIdUser() {
         return idUser;
-    }
-
-    public void setIdUser(Integer idUser) {
-        this.idUser = idUser;
     }
 }

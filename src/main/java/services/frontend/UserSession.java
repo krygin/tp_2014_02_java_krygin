@@ -6,7 +6,7 @@ package services.frontend;
 class UserSession {
     private String sessionId;
     private String username;
-    private Long userId;
+    private int idUser;
     private UserState userState;
 
     public UserSession(String sessionId) {
@@ -18,10 +18,6 @@ class UserSession {
         return sessionId;
     }
 
-    public void setSessionId(String sessionId) {
-        this.sessionId = sessionId;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -30,19 +26,19 @@ class UserSession {
         this.username = username;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
     public UserState getUserState() {
         return userState;
     }
 
     public void setUserState(UserState userState) {
         this.userState = userState;
+    }
+
+    public int getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(int idUser) {
+        this.idUser = idUser;
     }
 }

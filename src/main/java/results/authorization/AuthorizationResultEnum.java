@@ -5,5 +5,5 @@ package results.authorization;
  */
 public enum AuthorizationResultEnum {
     SUCCESS,
-    FAIL
+    FAILURE
 }

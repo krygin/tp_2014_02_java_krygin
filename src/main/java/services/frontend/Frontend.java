@@ -1,11 +1,11 @@
 package services.frontend;
 
+import constants.Constants;
 import message_system.Abonent;
 import message_system.Address;
 import message_system.MessageSystem;
 import message_system.messages.AuthorizationRequestMsg;
 import message_system.messages.RegistrationRequestMsg;
-import models.UserDataSet;
 import results.authorization.AuthorizationResult;
 import results.registration.RegistrationResult;
 import utils.PageGenerator;
@@ -73,7 +73,7 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
             case SUCCESS:
                 userSession.setUserState(JUST_REGISTERED);
                 break;
-            case FAIL:
+            case FAILURE:
                 userSession.setUserState(REGISTRATION_ERROR);
                 break;
         }
@@ -84,8 +84,9 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         switch (result.getResult()) {
             case SUCCESS:
                 userSession.setUserState(LOGGED_IN);
+                userSession.setIdUser(result.getIdUser());
                 break;
-            case FAIL:
+            case FAILURE:
                 userSession.setUserState(AUTHORIZATION_ERROR);
                 break;
         }
@@ -116,6 +117,8 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
             case INDEX_PAGE:
                 responseIndexPage(resp, userSession);
                 break;
+            case LOGOUT_ACTION:
+                handleLogoutRequest(resp, userSession);
             default:
                 resp.sendRedirect(INDEX_PAGE);
         }
@@ -132,10 +135,10 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         UserSession userSession = sessions.get(sessionId);
         switch (req.getPathInfo()) {
             case REGISTER_ACTION:
-                handleRegistrationRequest(req, resp, userSession, messageSystem);
+                handleRegistrationRequest(req, resp, userSession);
                 break;
             case AUTHORIZE_ACTION:
-                handleAuthorizationRequest(req, resp, userSession, messageSystem);
+                handleAuthorizationRequest(req, resp, userSession);
                 break;
             default:
                 break;
@@ -261,34 +264,39 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         resp.getWriter().println(PageGenerator.getPage("loading.tml", pageVariables));
     }
 
-    private void handleRegistrationRequest(HttpServletRequest req, HttpServletResponse resp, UserSession userSession, MessageSystem messageSystem) throws IOException {
+    private void handleLogoutRequest(HttpServletResponse resp, UserSession userSession) throws IOException {
+        sessions.remove(userSession.getSessionId());
+        resp.sendRedirect(INDEX_PAGE);
+    }
+
+    private void handleRegistrationRequest(HttpServletRequest req, HttpServletResponse resp, UserSession userSession) throws IOException {
         String username = req.getParameter("username");
         String password1 = req.getParameter("password1");
         String password2 = req.getParameter("password2");
-        if (username.equals("") || password1.equals("") || password2.equals("") || !password1.equals(password2)) {
+        if (username.isEmpty() || password1.isEmpty() || password2.isEmpty() || !password1.equals(password2)) {
             userSession.setUserState(WRONG_DATA_INPUT);
             resp.sendRedirect(REGISTRATION_PAGE);
             return;
         }
-        UserDataSet user = new UserDataSet(username, password1);
+        User user = new User(username, password1);
         Address frontendAddress = messageSystem.getAddressService().getFrontend();
-        Address accountServiceAddress = messageSystem.getAddressService().getAccountService();
+        Address accountServiceAddress = messageSystem.getAddressService().getAccountService(user.getUsername().hashCode() % Constants.NUMBER_OF_ACCOUNT_SERVICES);
         String sessionId = userSession.getSessionId();
         messageSystem.sendMessage(new RegistrationRequestMsg(frontendAddress, accountServiceAddress, user, sessionId));
         userSession.setUserState(WAITING_FOR_REGISTRATION);
     }
 
-    private void handleAuthorizationRequest(HttpServletRequest req, HttpServletResponse resp, UserSession userSession, MessageSystem messageSystem) throws IOException {
+    private void handleAuthorizationRequest(HttpServletRequest req, HttpServletResponse resp, UserSession userSession) throws IOException {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
-        if (username.equals("") || password.equals("")) {
+        if (username.isEmpty() || password.isEmpty()) {
             userSession.setUserState(WRONG_DATA_INPUT);
             resp.sendRedirect(AUTHORIZATION_PAGE);
             return;
         }
-        UserDataSet user = new UserDataSet(username, password);
+        User user = new User(username, password);
         Address frontendAddress = messageSystem.getAddressService().getFrontend();
-        Address accountServiceAddress = messageSystem.getAddressService().getAccountService();
+        Address accountServiceAddress = messageSystem.getAddressService().getAccountService(user.getUsername().hashCode() % Constants.NUMBER_OF_ACCOUNT_SERVICES);
         String sessionId = userSession.getSessionId();
         messageSystem.sendMessage(new AuthorizationRequestMsg(frontendAddress, accountServiceAddress, user, sessionId));
         userSession.setUserState(WAITING_FOR_AUTHORIZATION);

@@ -5,5 +5,5 @@ package results.registration;
  */
 public enum RegistrationResultEnum {
     SUCCESS,
-    FAIL
+    FAILURE
 }

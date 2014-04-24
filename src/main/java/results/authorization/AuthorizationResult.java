@@ -16,15 +16,7 @@ final public class AuthorizationResult {
         return result;
     }
 
-    public void setResult(AuthorizationResultEnum result) {
-        this.result = result;
-    }
-
     public Integer getIdUser() {
         return idUser;
-    }
-
-    public void setIdUser(Integer idUser) {
-        this.idUser = idUser;
     }
 }
