@@ -59,8 +59,8 @@ public class AccountService implements Runnable, Abonent {
         try {
             UserDataSet userDataSet = new UserDataSet(user.getUsername(), user.getPassword());
             userDataSetDAO.addUser(userDataSet);
-            Integer idUser = userDataSetDAO.getUser(userDataSet.getUsername(), userDataSet.getPassword());
-            return new RegistrationResult(RegistrationResultEnum.SUCCESS, idUser);
+            UserDataSet returnedUserDataSet = userDataSetDAO.getUser(userDataSet.getUsername(), userDataSet.getPassword());
+            return new RegistrationResult(RegistrationResultEnum.SUCCESS, returnedUserDataSet.getIdUser());
         } catch (HibernateException | NullPointerException e) {
             return new RegistrationResult(RegistrationResultEnum.FAILURE, null);
         }
@@ -69,8 +69,8 @@ public class AccountService implements Runnable, Abonent {
     public AuthorizationResult authorize(User user) {
         try {
             UserDataSet userDataSet = new UserDataSet(user.getUsername(), user.getPassword());
-            int id = userDataSetDAO.getUser(userDataSet.getUsername(), userDataSet.getPassword());
-            return new AuthorizationResult(AuthorizationResultEnum.SUCCESS, id);
+            UserDataSet returnedUserDataSet = userDataSetDAO.getUser(userDataSet.getUsername(), userDataSet.getPassword());
+            return new AuthorizationResult(AuthorizationResultEnum.SUCCESS, returnedUserDataSet.getIdUser());
         } catch (HibernateException | NullPointerException e) {
             return new AuthorizationResult(AuthorizationResultEnum.FAILURE, null);
         }

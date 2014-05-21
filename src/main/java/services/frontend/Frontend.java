@@ -280,7 +280,7 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         }
         User user = new User(username, password1);
         Address frontendAddress = messageSystem.getAddressService().getFrontend();
-        Address accountServiceAddress = messageSystem.getAddressService().getAccountService(user.getUsername().hashCode() % Constants.NUMBER_OF_ACCOUNT_SERVICES);
+        Address accountServiceAddress = messageSystem.getAddressService().getAccountService(user.hashCode() % Constants.NUMBER_OF_ACCOUNT_SERVICES);
         String sessionId = userSession.getSessionId();
         messageSystem.sendMessage(new RegistrationRequestMsg(frontendAddress, accountServiceAddress, user, sessionId));
         userSession.setUserState(WAITING_FOR_REGISTRATION);
@@ -296,7 +296,7 @@ public class Frontend extends HttpServlet implements Runnable, Abonent {
         }
         User user = new User(username, password);
         Address frontendAddress = messageSystem.getAddressService().getFrontend();
-        Address accountServiceAddress = messageSystem.getAddressService().getAccountService(user.getUsername().hashCode() % Constants.NUMBER_OF_ACCOUNT_SERVICES);
+        Address accountServiceAddress = messageSystem.getAddressService().getAccountService(user.hashCode() % Constants.NUMBER_OF_ACCOUNT_SERVICES);
         String sessionId = userSession.getSessionId();
         messageSystem.sendMessage(new AuthorizationRequestMsg(frontendAddress, accountServiceAddress, user, sessionId));
         userSession.setUserState(WAITING_FOR_AUTHORIZATION);
