@@ -10,5 +10,9 @@
 <img src="jetty-logo-80x22.png"/>
 
 <p>${message}</p>
+
+<div hidden="true">
+    <p>index page</p>
+</div>
 </body>
 </html>

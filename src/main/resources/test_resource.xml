@@ -1,0 +1,4 @@
+<class type="resource_system.resources.TestResource">
+    <INTEGER_VALUE>0</INTEGER_VALUE>
+    <STRING_VALUE>test string</STRING_VALUE>
+</class>

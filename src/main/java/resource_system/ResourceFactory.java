@@ -11,7 +11,7 @@ public class ResourceFactory {
     private ResourceFactory() {
     }
 
-    public static ResourceFactory getInstance() {
+    public static synchronized ResourceFactory getInstance() {
         if (instance == null) {
             instance = new ResourceFactory();
         }

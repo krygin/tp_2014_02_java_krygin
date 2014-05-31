@@ -10,7 +10,7 @@ public abstract class Msg {
     final private Address from;
     final private Address to;
 
-    Msg(Address from, Address to) {
+    protected Msg(Address from, Address to) {
         this.from = from;
         this.to = to;
     }

@@ -1,0 +1,5 @@
+<class type="resource_system.resources.AccountServiceConfiguration">
+    <TICK_TIME>20</TICK_TIME>
+    <DATABASE_CONFIGURATION_FILE_PATH>hibernate.cfg.xml</DATABASE_CONFIGURATION_FILE_PATH>
+    <TEST_DATABASE_CONFIGURATION_FILE_PATH>hibernateH2.cfg.xml</TEST_DATABASE_CONFIGURATION_FILE_PATH>
+</class>

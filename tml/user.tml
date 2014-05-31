@@ -27,5 +27,9 @@
 
 <p>${message}</p>
 <a href="logout">Выйти</a>
+
+<div hidden="true">
+    <p>user page</p>
+</div>
 </body>
 </html>

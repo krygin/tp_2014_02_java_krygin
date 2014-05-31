@@ -1,0 +1,4 @@
+<class type="resource_system.resources.ServerConfiguration">
+    <PORT>8080</PORT>
+    <NUMBER_OF_ACCOUNT_SERVICES>2</NUMBER_OF_ACCOUNT_SERVICES>
+</class>

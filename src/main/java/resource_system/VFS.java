@@ -16,20 +16,23 @@ public class VFS {
         this.root = root;
     }
 
-
-    boolean isExist(String path) {
+    public boolean isExist(String path) {
         return new File(path).exists();
     }
 
-    boolean isDirectory(String path) {
-        return new File(path).isDirectory();
+    public boolean isDirectory(String path) {
+        return new File(root + path).isDirectory();
     }
 
-    String getAbsolutePath(String file) {
+    public String getAbsolutePath(String file) {
         return new File(root + file).getAbsolutePath();
     }
 
-    byte[] getBytes(String file) throws IOException {
+    public String getPath(String file) {
+        return new File(root + file).getPath();
+    }
+
+    public byte[] getBytes(String file) throws IOException {
         FileInputStream fileInputStream = new FileInputStream(root + file);
         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
         byte[] bytes = new byte[dataInputStream.available()];
@@ -38,7 +41,7 @@ public class VFS {
         return bytes;
     }
 
-    String getUTF8Text(String file) throws IOException {
+    public String getUTF8Text(String file) throws IOException {
         FileInputStream fileInputStream = new FileInputStream(root + file);
         DataInputStream dataInputStream = new DataInputStream(fileInputStream);
 
@@ -53,7 +56,7 @@ public class VFS {
         return stringBuilder.toString();
     }
 
-    Iterator<String> getIterator(String startDir) {
+    public Iterator<String> getIterator(String startDir) {
         return new FileIterator(root + startDir);
     }
 

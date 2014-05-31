@@ -9,5 +9,9 @@
 </head>
 <body onload='setInterval(function(){refresh()},${refreshPeriod} );'>
 <p>${message}</p>
+
+<div hidden="true">
+    <p>loading page</p>
+</div>
 </body>
 </html>
